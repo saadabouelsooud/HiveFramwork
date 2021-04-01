@@ -12,6 +12,8 @@ public class HiveFramework:  ObservableObject {
     var questionsResponses: [QuestionsResponse] = []
     public var isGetTokenSuccess : Bool = false
     public var isGetSurveySuccess : Bool = false
+    public var isSurveysaved : Bool = false
+
     public var isPopup : Bool = false
 
 

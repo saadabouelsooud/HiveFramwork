@@ -24,7 +24,7 @@ public class SaveSurveyResponseWrapper {
         get{return _tokenResponseWrapper}
     }
 
-    public func SaveWebSurveyResponse (surveyModel: SurveyModel, questionResponses:[QuestionsResponse]) {
+    public func SaveWebSurveyResponse (surveyModel: SurveyModel, questionResponses:[QuestionsResponse], completionHandler: @escaping CompletionHandler) {
         print("inside SaveWebSurveyResponse")
         cancellationToken = apiClient.SaveWebSurveyResponse(authorization: (self.tokenResponseWrapper.authorization)!, InvitationGuid: surveyModel.invitationGuid!, SurveyGuid: surveyModel.surveyGuid!, SurveyID: surveyModel.surveyID!, questionResponses: questionResponses)
                     .mapError({ (error) -> Error in
@@ -35,6 +35,7 @@ public class SaveSurveyResponseWrapper {
                           receiveValue: {
                             print(" success and reponse is \($0)")
                             self.saveSurveyResponse = $0
+                            completionHandler(true)
 //                            self.themeManager.themeModel = (self.surveyResponse.survey?.surveyOptions?.theme)!
 //                            print("theme manager wrapped obje is \(self.themeManager)")
                     })

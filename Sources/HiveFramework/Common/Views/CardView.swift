@@ -12,7 +12,7 @@ struct DisplayModeViewState {
 }
 
 enum DisplayModeViewInput {
-    case submitAnswers(surveyModel: SurveyModel, questionResponses: [QuestionsResponse])
+    case submitAnswers(surveyModel: SurveyModel, questionResponses: [QuestionsResponse], completionHandler: CompletionHandler)
 }
 
 public struct CardView: View {

@@ -21,7 +21,13 @@ struct SubmitButtonView: View {
 
         
         Button(action: {
-            self.submitAnswers(surveyModel: surveyModel!, questionResponses: questionResponses)
+            self.submitAnswers(surveyModel: surveyModel!, questionResponses: questionResponses, completionHandler: { isSurveySaved in
+                if(isSurveySaved)
+                {
+                    self.viewModel.sdkState.isSurveysaved = true
+                }
+                
+            })
         }, label: {
             HStack()
             {
@@ -50,8 +56,8 @@ struct SubmitButtonView: View {
 
 // MARK: - Private extension
 private extension SubmitButtonView {
-    func submitAnswers(surveyModel: SurveyModel, questionResponses: [QuestionsResponse]) {
-        viewModel.trigger(.submitAnswers(surveyModel: surveyModel, questionResponses: questionResponses))
+    func submitAnswers(surveyModel: SurveyModel, questionResponses: [QuestionsResponse], completionHandler: @escaping CompletionHandler) {
+    viewModel.trigger(.submitAnswers(surveyModel: surveyModel, questionResponses: questionResponses, completionHandler: completionHandler))
     }
 }
 
