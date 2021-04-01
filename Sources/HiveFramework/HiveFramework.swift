@@ -11,8 +11,8 @@ public class HiveFramework:  ObservableObject {
     @Published var currentQuestionIndex: CGFloat = 0.0
     var questionsResponses: [QuestionsResponse] = []
     public var isGetTokenSuccess : Bool = false
-    public var isGetSurveySuccess : Bool = false
-    public var isSurveysaved : Bool = false
+    @Published public var isGetSurveySuccess : Bool = false
+    @Published public var çç : Bool = false
 
     public var isPopup : Bool = false
 
@@ -84,7 +84,7 @@ public class HiveFramework:  ObservableObject {
     {
         let displayMode = self.surveyResponseWrapper.surveyResponse.survey?.surveyOptions?.displayMode
         if(displayMode == DisplayMode.CardView.rawValue && self.isGetSurveySuccess)
-        {
+        {   
             return AnyView(HiveCardView())
         }
         else if(displayMode != DisplayMode.CardView.rawValue && self.isGetSurveySuccess)
