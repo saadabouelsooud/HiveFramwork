@@ -12,7 +12,7 @@ public class HiveFramework:  ObservableObject {
     var questionsResponses: [QuestionsResponse] = []
     public var isGetTokenSuccess : Bool = false
     @Published public var isGetSurveySuccess : Bool = false
-    @Published public var çç : Bool = false
+    @Published public var isSurveysaved : Bool = false
 
     public var isPopup : Bool = false
 
