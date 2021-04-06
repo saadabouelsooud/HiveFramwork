@@ -11,6 +11,8 @@ struct PopupSurveyTitleView: View {
     @ObservedObject  var sdkState : HiveFramework
 
     var body: some View {
+        let surveyHasProgress = (HiveFramework.shared!.surveyResponseWrapper.surveyResponse.survey?.surveyOptions?.hasProgressBar)!
+        
         VStack
         {
             HStack()
@@ -25,9 +27,11 @@ struct PopupSurveyTitleView: View {
 
             }
             .padding(10)
-            
-        ProgressBar(progress: $sdkState.questionsProgress)
-            .padding(10)
+            if(surveyHasProgress)
+            {
+              ProgressBar(progress: $sdkState.questionsProgress)
+              .padding(10)
+            }
         }
     }
 }
