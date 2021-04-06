@@ -23,7 +23,7 @@ enum EmojiViewInput {
 struct EmojiView: View {
     @ObservedObject
     var viewModel : AnyViewModel<EmojiViewState,EmojiViewInput>
-//    @State var isHover = false
+    @State var isHover = false
 
     
     init(selectedIndex: Int, title: String, titleStyle: QuestionTitleStyleModel) {
@@ -39,17 +39,19 @@ struct EmojiView: View {
                 HStack{
                     ForEach(0..<viewModel.emojiRatesList.count)
                     { index in
+                        if #available(iOS 13.4, *)
+                        {
                         EmojiShapeView(imageName: viewModel.emojiRatesList[index].imageName, selectedIndex: self.viewModel.selectedIndex,index: index)
                         .onTapGesture
                             {
                                 self.select(index: index)
                             }
-                        .hoverEffect(.highlight)
-//                        .scaleEffect(isHover ? 1.2 : 1)
-//                        .animation(.default)
-//                        .onHover { hover in
-//                                 isHover = hover
-//                                }
+                        .scaleEffect(isHover ? 1.2 : 1)
+                        .animation(.default)
+                        .onHover { hover in
+                                 isHover = hover
+                                }
+                        }
                     }
                 }
             }
