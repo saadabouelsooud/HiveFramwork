@@ -12,6 +12,9 @@ struct SurveyNavigationView: View {
     let isPopup: Bool
     
     var body: some View {
+        let leftArrowName = isPopup ? "popup-left" : "left"
+        let rightArrowName = isPopup ? "popup-right" : "right"
+
         
         HStack
         {
@@ -20,7 +23,7 @@ struct SurveyNavigationView: View {
                  Button(action: {
                     sdkState.goLeft()
                  }, label: {
-                    Image(isPopup ? "popup-left" : "left", bundle: Bundle.module)/// module will be auto generated in runtime
+                    Image(leftArrowName , bundle: Bundle.module)/// module will be auto generated in runtime
                  })
             }
             
@@ -31,7 +34,7 @@ struct SurveyNavigationView: View {
                 Button(action: {
                     sdkState.goRight()
                 }, label: {
-                    Image(isPopup ? "popup-right" : "right" , bundle: Bundle.module) /// module will be auto generated in runtime
+                    Image(rightArrowName , bundle: Bundle.module) /// module will be auto generated in runtime
                 })
             }
         }
