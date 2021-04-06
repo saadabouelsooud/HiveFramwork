@@ -12,7 +12,7 @@ struct SurveyTitleView: View {
     
     var body: some View {
         let surveyBackgroundColor = (HiveFramework.shared!.surveyResponseWrapper.surveyResponse.survey?.surveyOptions?.theme?.surveyBackgroundColor)!
-        let surveyHasProgress = (HiveFramework.shared!.surveyResponseWrapper.surveyResponse.survey?.surveyOptions?.progressBarPosition)!
+        let surveyHasProgress = (HiveFramework.shared!.surveyResponseWrapper.surveyResponse.survey?.surveyOptions?.hasProgressBar)!
 
         VStack(alignment: .leading){
             
