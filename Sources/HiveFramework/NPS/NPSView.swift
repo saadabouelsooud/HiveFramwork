@@ -33,8 +33,8 @@ struct NPSView: View {
             QuestionTitleTextView(title: viewModel.title, styleModel: viewModel.titleStyle)
             Spacer().frame(height: 70)
             VStack {
-                ScrollView(.horizontal)
-                {
+//                ScrollView(.horizontal)
+//                {
                     HStack{
                         ForEach(0..<self.viewModel.npsRatesList.count)
                         { index in
@@ -45,7 +45,7 @@ struct NPSView: View {
                                 }
                         }
                     }
-                }
+//                }
                 HStack()
                 {
                     Text("Bad")
