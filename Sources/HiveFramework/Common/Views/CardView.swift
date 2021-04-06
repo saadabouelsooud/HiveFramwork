@@ -50,7 +50,7 @@ public struct CardView: View {
             SubmitButtonView(sdkState: viewModel.sdkState, viewModel: viewModel)
         }
         
-        Spacer().frame(height: 20)
+        Spacer().frame(height: 10)
 
        }
        .cornerRadius(25)

@@ -50,7 +50,7 @@ struct PopupView: View {
                    
                 SubmitButtonView(sdkState: HiveFramework.shared!, viewModel: viewModel)
                 
-                Spacer().frame(height: 20)
+                Spacer().frame(height: 10)
                 }
                 .environment(\.layoutDirection, LanguageManager.shared.isRightToLeft ? .rightToLeft : .leftToRight)
                 .background(Color(hex: surveyBackgroundColor).opacity(0.1))
