@@ -24,7 +24,7 @@ let package = Package(
             name: "HiveFramework",
             dependencies: [],
             resources: [
-                .process("Resources")
+                .copy("Resources")
             ]
         ),
         .testTarget(
