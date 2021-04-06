@@ -12,6 +12,7 @@ struct SurveyTitleView: View {
     
     var body: some View {
         let surveyBackgroundColor = (HiveFramework.shared!.surveyResponseWrapper.surveyResponse.survey?.surveyOptions?.theme?.surveyBackgroundColor)!
+        let surveyHasProgress = (HiveFramework.shared!.surveyResponseWrapper.surveyResponse.survey?.surveyOptions?.progressBarPosition)!
 
         VStack(alignment: .leading){
             
@@ -34,8 +35,11 @@ struct SurveyTitleView: View {
             }
             .padding(10)
             
+            if(surveyHasProgress)
+            {
             ProgressBar(progress: $sdkState.questionsProgress)
             .padding(10)
+            }
         }
         .padding(10)
         .environment(\.layoutDirection, LanguageManager.shared.isRightToLeft ? .rightToLeft : .leftToRight)
