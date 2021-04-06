@@ -12,13 +12,13 @@ struct SurveyNavigationView: View {
     let isPopup: Bool
     
     var body: some View {
-        let leftArrowName = isPopup ? "popup-left.png" : "left.png"
-        let rightArrowName = isPopup ? "popup-right.png" : "right.png"
+        let leftArrowName = isPopup ? "popup-left" : "left"
+        let rightArrowName = isPopup ? "popup-right" : "right"
 
         
         HStack
         {
-            if(sdkState.questionsProgress != 0.0 )
+            if(sdkState.questionsProgress != 0.0 || sdkState.currentQuestionIndex != 0)
             {
                  Button(action: {
                     sdkState.goLeft()
