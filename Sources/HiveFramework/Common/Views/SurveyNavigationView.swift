@@ -12,8 +12,8 @@ struct SurveyNavigationView: View {
     let isPopup: Bool
     
     var body: some View {
-        let leftArrowName = isPopup ? "popup-left" : "left"
-        let rightArrowName = isPopup ? "popup-right" : "right"
+        let leftArrowName = isPopup ? "popup-left.png" : "left.png"
+        let rightArrowName = isPopup ? "popup-right.png" : "right.png"
 
         
         HStack
