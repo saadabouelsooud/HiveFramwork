@@ -18,7 +18,7 @@ struct SurveyNavigationView: View {
         
         HStack
         {
-            if(sdkState.questionsProgress != 0.0 || sdkState.currentQuestionIndex != 0)
+            if(sdkState.questionsProgress != 0.0 && sdkState.currentQuestionIndex != 0)
             {
                  Button(action: {
                     sdkState.goLeft()
