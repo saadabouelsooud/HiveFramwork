@@ -23,6 +23,8 @@ enum EmojiViewInput {
 struct EmojiView: View {
     @ObservedObject
     var viewModel : AnyViewModel<EmojiViewState,EmojiViewInput>
+    @State var isHover = false
+
     
     init(selectedIndex: Int, title: String, titleStyle: QuestionTitleStyleModel) {
         self.viewModel = AnyViewModel(EmojiViewModel(selectedIndex: selectedIndex,title: title,titleStyle: titleStyle))
@@ -42,7 +44,11 @@ struct EmojiView: View {
                             {
                                 self.select(index: index)
                             }
-                        .animation(.easeOut)
+                        .scaleEffect(isHover ? 1.2 : 1)
+                        .animation(.default)
+                        .onHover { hover in
+                                 isHover = hover
+                                }
                     }
                 }
             }
