@@ -42,6 +42,7 @@ struct EmojiView: View {
                             {
                                 self.select(index: index)
                             }
+                        .animation(.easeOut)
                     }
                 }
             }
