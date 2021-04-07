@@ -33,7 +33,7 @@ struct EmojiView: View {
         VStack {
             Spacer().frame(height: 30)
             QuestionTitleTextView(title: viewModel.title, styleModel: viewModel.titleStyle)
-            Spacer().frame(height: 70)
+            Spacer().frame(height: 90)
             VStack {
                 HStack{
                     ForEach(0..<viewModel.emojiRatesList.count)
