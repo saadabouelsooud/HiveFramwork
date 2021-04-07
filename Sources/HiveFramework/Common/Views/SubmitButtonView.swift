@@ -34,7 +34,7 @@ struct SubmitButtonView: View {
 //                .resizable()
 //                .frame(width: 50, height: 50,alignment: .leading)
                 .padding(.bottom, -25)
-                .padding(.horizontal,-25)
+                .padding(.horizontal,25)
 
 
 
