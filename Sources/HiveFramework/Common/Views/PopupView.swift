@@ -24,6 +24,7 @@ struct PopupView: View {
 
     init(sdkState: HiveFramework) {
         self.viewModel = AnyViewModel(DisplayModeViewModel(sdkState: sdkState))
+        self.sdkState = sdkState
     }
     
     public var body: some View{
