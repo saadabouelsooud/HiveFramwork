@@ -130,7 +130,9 @@ extension HiveFramework
     
     func goLeft()
     {
-        if(currentQuestionIndex > 0)
+        let questionRequired = surveyResponseWrapper.surveyResponse.survey?.questions![Int(currentQuestionIndex)].isRequired
+        
+        if(currentQuestionIndex > 0 && !questionRequired!)
         {
             currentQuestionIndex -= 1
             updateQuestionsProgress()
@@ -139,9 +141,10 @@ extension HiveFramework
     
     func goRight()
     {
+        let questionRequired = surveyResponseWrapper.surveyResponse.survey?.questions![Int(currentQuestionIndex)].isRequired
         let questionsCount = (surveyResponseWrapper.surveyResponse.survey?.questions!.count)!
         let currentIndex = Int(currentQuestionIndex)
-        if( currentIndex < questionsCount-1)
+        if( currentIndex < questionsCount-1 && !questionRequired!)
         {
             currentQuestionIndex += 1
             updateQuestionsProgress()
