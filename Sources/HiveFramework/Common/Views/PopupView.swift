@@ -57,6 +57,8 @@ struct PopupView: View {
                          })
                     
                     SurveyNavigationView(sdkState: HiveFramework.shared!, isPopup: viewModel.sdkState.isPopup)
+                    .frame(alignment: .center)
+
                    }
                  
                 Spacer().frame(height: 20)
