@@ -134,7 +134,7 @@ extension HiveFramework
     {
         let questionRequired = surveyResponseWrapper.surveyResponse.survey?.questions![Int(currentQuestionIndex)].isRequired
         
-        if(currentQuestionIndex > 0 && (!questionRequired! && questionSelected))
+        if(currentQuestionIndex > 0 && (!questionRequired! || questionSelected))
         {
             currentQuestionIndex -= 1
             questionSelected = false
@@ -147,7 +147,7 @@ extension HiveFramework
         let questionRequired = surveyResponseWrapper.surveyResponse.survey?.questions![Int(currentQuestionIndex)].isRequired
         let questionsCount = (surveyResponseWrapper.surveyResponse.survey?.questions!.count)!
         let currentIndex = Int(currentQuestionIndex)
-        if( currentIndex < questionsCount-1 && (!questionRequired! && questionSelected))
+        if( currentIndex < questionsCount-1 && (!questionRequired! || questionSelected))
         {
             currentQuestionIndex += 1
             questionSelected = false
