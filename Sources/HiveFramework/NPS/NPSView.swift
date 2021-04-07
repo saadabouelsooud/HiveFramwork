@@ -43,7 +43,6 @@ struct NPSView: View {
                                 }
                         }
                     }
-                    .padding()
                 HStack()
                 {
                     Text("Bad")

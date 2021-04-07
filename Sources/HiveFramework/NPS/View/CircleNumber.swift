@@ -18,7 +18,7 @@ struct CircleNumber: View {
     var body: some View {
         ZStack{
             Circle().foregroundColor(Color(hex: circleHexColor))
-                .frame(width: selectedIndex == index ? 34 : 24, height: selectedIndex == index ? 34 : 24, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .frame(width: selectedIndex == index ? 32 : 24, height: selectedIndex == index ? 32 : 24, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             Text(numberText)
                 .foregroundColor(.white)
         }
