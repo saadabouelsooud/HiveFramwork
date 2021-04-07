@@ -41,7 +41,7 @@ struct SubmitButtonView: View {
                     .font(.custom((submitButtonStyle?.fontFamily!)!, size: fontSize))
                     .foregroundColor(Color(hex: canSubmit ? (submitButtonStyle?.fontColor!)! : (submitButtonStyle?.hoverFontColor!)!))
                     .fontWeight((submitButtonStyle?.fontBold!)! ? .bold : .none)
-                    .padding(-25)
+                    .padding(.horizontal,-25)
             }
         })
         .disabled(!canSubmit)
