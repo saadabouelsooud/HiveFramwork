@@ -21,6 +21,7 @@ struct SurveyTitleView: View {
             }, label : {
               Image("close" , bundle: Bundle.module) /// module will be auto generated in runtime
             })
+            .frame(width: 30, height: 30, alignment: .leading)
             
             HStack() {
 
