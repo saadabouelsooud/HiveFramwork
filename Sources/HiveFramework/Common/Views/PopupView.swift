@@ -66,11 +66,11 @@ struct PopupView: View {
         }
         .popupContent()
          }
-        else
-        {
-            EmptyView()
-
-        }
+//        else
+//        {
+//            EmptyView()
+//
+//        }
     }
     
     /// should refactor it & put it in new class

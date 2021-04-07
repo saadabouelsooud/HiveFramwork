@@ -20,8 +20,12 @@ public struct CardView: View {
     @ObservedObject
     var viewModel : AnyViewModel<DisplayModeViewState,DisplayModeViewInput>
     
+    @ObservedObject
+    var sdkState: HiveFramework
+    
     init(sdkState: HiveFramework) {
         self.viewModel = AnyViewModel(DisplayModeViewModel(sdkState: sdkState))
+        self.sdkState = sdkState
     }
 
     
@@ -58,10 +62,10 @@ public struct CardView: View {
        .environment(\.layoutDirection, LanguageManager.shared.isRightToLeft ? .rightToLeft : .leftToRight)
       .padding(20)
       }
-    else
-    {
-      EmptyView()
-    }
+//    else
+//    {
+//      EmptyView()
+//    }
 }
     /// should refactor it & put it in new class
     /// it is in BaseView & Pop up view
