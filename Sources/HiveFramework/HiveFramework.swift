@@ -7,7 +7,7 @@ public class HiveFramework:  ObservableObject {
     @Published var saveSurveyResponseWrapper = SaveSurveyResponseWrapper()
     @Published var languageManager = LanguageManager.shared
     @Published var questionsProgress: CGFloat = 0.0
-    @Published var closeSurvey: Bool = false
+    @Published public var closeSurvey: Bool = false
     @Published var currentQuestionIndex: CGFloat = 0.0
     var questionsResponses: [QuestionsResponse] = []
     public var isGetTokenSuccess : Bool = false
