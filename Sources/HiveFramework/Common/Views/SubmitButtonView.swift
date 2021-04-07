@@ -32,6 +32,8 @@ struct SubmitButtonView: View {
             HStack(alignment: .center)
             {
                 Image(canSubmit ? "submit-enabled" : "submit-disabled", bundle: Bundle.module)/// module will be auto generated in runtime
+                .resizable()
+                .frame(alignment: .leading)
                 .padding(.bottom, -25)
 
 
@@ -41,11 +43,12 @@ struct SubmitButtonView: View {
                     .font(.custom((submitButtonStyle?.fontFamily!)!, size: fontSize))
                     .foregroundColor(Color(hex: canSubmit ? (submitButtonStyle?.fontColor!)! : (submitButtonStyle?.hoverFontColor!)!))
                     .fontWeight((submitButtonStyle?.fontBold!)! ? .bold : .none)
+                    .frame(alignment: .center)
                     .padding(.horizontal,-25)
             }
         })
         .disabled(!canSubmit)
-        .frame(width: 180, height: 50)
+        .frame(width: 180, height: 50,alignment: .center)
         .overlay(
               RoundedRectangle(cornerRadius: 25)
             .stroke(Color(hex: (submitButtonStyle?.borderColor!)!), lineWidth: 1)
