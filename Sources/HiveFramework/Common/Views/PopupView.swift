@@ -38,9 +38,9 @@ struct PopupView: View {
                     viewModel.state.sdkState.closeSurvey = true
                 }, label : {
                   Image("close" , bundle: Bundle.module)/// module will be auto generated in runtime
-                    .resizable()
-                    .frame(width: 60, height: 60, alignment: .leading)
                 })
+                .frame(width: 40, height: 40, alignment: .leading)
+
                 }
                 
                   PopupSurveyTitleView(sdkState: HiveFramework.shared!)

@@ -38,9 +38,9 @@ public struct CardView: View {
             viewModel.state.sdkState.closeSurvey = true
         }, label : {
           Image("close" , bundle: Bundle.module)/// module will be auto generated in runtime
-            .resizable()
-            .frame(width: 60, height: 60, alignment: .leading)
         })
+        .frame(width: 60, height: 60, alignment: .leading)
+
             }
                 
         SurveyTitleView(sdkState: viewModel.sdkState)
