@@ -14,7 +14,7 @@ struct QuestionTitleTextView: View {
     public var body: some View {
         let fontSize = CGFloat(Float((styleModel.fontSize!.deletingSuffix("px")))!)
 
-        Text("Q\(HiveFramework.shared!.currentQuestionIndex+1). \(title)")
+        Text("Q\(Int(HiveFramework.shared!.currentQuestionIndex)+1). \(title)")
         .underline(styleModel.fontUnderline!)
         .italic(enabled: styleModel.fontItalic!)
         .font(.custom(styleModel.fontFamily!, size: fontSize))
