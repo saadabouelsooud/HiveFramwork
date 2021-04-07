@@ -33,7 +33,7 @@ struct SubmitButtonView: View {
             {
                 Image(canSubmit ? "submit-enabled" : "submit-disabled", bundle: Bundle.module)/// module will be auto generated in runtime
                 .resizable()
-                .frame(alignment: .leading)
+                .frame(minWidth: .leastNormalMagnitude,alignment: .leading)
                 .padding(.bottom, -25)
 
 
@@ -43,7 +43,7 @@ struct SubmitButtonView: View {
                     .font(.custom((submitButtonStyle?.fontFamily!)!, size: fontSize))
                     .foregroundColor(Color(hex: canSubmit ? (submitButtonStyle?.fontColor!)! : (submitButtonStyle?.hoverFontColor!)!))
                     .fontWeight((submitButtonStyle?.fontBold!)! ? .bold : .none)
-                    .frame(alignment: .center)
+                    .multilineTextAlignment(.center)
                     .padding(.horizontal,-25)
             }
         })
