@@ -27,8 +27,8 @@ public struct CardView: View {
     
   public var body: some View {
     let questions = (viewModel.sdkState.surveyResponseWrapper.surveyResponse.survey?.questions)!
-//    if(!sdkState.closeSurvey)
-//     {
+    if(!viewModel.sdkState.closeSurvey)
+     {
       VStack{
         SurveyTitleView(sdkState: viewModel.sdkState)
         .padding()
@@ -57,11 +57,11 @@ public struct CardView: View {
        .cornerRadius(25)
        .environment(\.layoutDirection, LanguageManager.shared.isRightToLeft ? .rightToLeft : .leftToRight)
       .padding(20)
-//      }
-//    else
-//    {
-//      EmptyView()
-//    }
+      }
+    else
+    {
+      EmptyView()
+    }
 }
     /// should refactor it & put it in new class
     /// it is in BaseView & Pop up view

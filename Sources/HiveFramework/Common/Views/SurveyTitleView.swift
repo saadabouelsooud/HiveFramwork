@@ -16,11 +16,11 @@ struct SurveyTitleView: View {
 
         VStack(alignment: .leading){
             
-//            Button(action: {
-//                sdkState.closeSurvey = true
-//            }, label : {
-//              Image("close" , bundle: Bundle.module) /// module will be auto generated in runtime
-//            })
+            Button(action: {
+                HiveFramework.shared!.closeSurvey = true
+            }, label : {
+              Image("close" , bundle: Bundle.module) /// module will be auto generated in runtime
+            })
             
             HStack() {
 
