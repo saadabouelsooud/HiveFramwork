@@ -44,7 +44,7 @@ struct SubmitButtonView: View {
                     .foregroundColor(Color(hex: canSubmit ? (submitButtonStyle?.fontColor!)! : (submitButtonStyle?.hoverFontColor!)!))
                     .fontWeight((submitButtonStyle?.fontBold!)! ? .bold : .none)
                     .multilineTextAlignment(.center)
-                    .padding(.horizontal,10)
+                    .padding(.horizontal,-15)
             }
         })
         .disabled(!canSubmit)
