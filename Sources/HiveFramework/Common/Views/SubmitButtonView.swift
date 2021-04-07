@@ -34,7 +34,7 @@ struct SubmitButtonView: View {
                 .resizable()
                 .frame(width: 60, height: 60,alignment: .leading)
                 .padding(.leading,-35)
-                .padding(.bottom, -25)
+                .padding(.bottom, -20)
 
 
 
@@ -45,7 +45,7 @@ struct SubmitButtonView: View {
                     .foregroundColor(Color(hex: canSubmit ? (submitButtonStyle?.fontColor!)! : (submitButtonStyle?.hoverFontColor!)!))
                     .fontWeight((submitButtonStyle?.fontBold!)! ? .bold : .none)
 //                    .multilineTextAlignment(.center)
-                    .padding(.horizontal,-25)
+                    .padding(.horizontal,-20)
         })
         .disabled(!canSubmit)
         .frame(width: 150, height: 50)
