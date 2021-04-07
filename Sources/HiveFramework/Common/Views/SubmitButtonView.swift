@@ -12,15 +12,15 @@ struct SubmitButtonView: View {
     var viewModel : AnyViewModel<DisplayModeViewState,DisplayModeViewInput>
     
     var body: some View {
-        let canSubmit = sdkState.questionsProgress == 100.0
+        let questionRequired = sdkState.surveyResponseWrapper.surveyResponse.survey?.questions![Int(sdkState.currentQuestionIndex)].isRequired
+        let canSubmit = (sdkState.questionsProgress == 100.0 && (!questionRequired! || sdkState.questionSelected))
         let submitButtonStyle = sdkState.surveyResponseWrapper.surveyResponse.survey?.surveyOptions?.theme?.submitButton
         let fontSize = CGFloat(Float(((submitButtonStyle?.fontSize!.deletingSuffix("px"))!))!)
         
         let surveyModel = sdkState.surveyResponseWrapper.surveyResponse.survey
         let questionResponses = sdkState.questionsResponses
 
-//        HStack()
-//        {
+
         Button(action: {
             self.submitAnswers(surveyModel: surveyModel!, questionResponses: questionResponses, completionHandler: { isSurveySaved in
                 if(isSurveySaved)
@@ -44,7 +44,6 @@ struct SubmitButtonView: View {
                     .font(.custom((submitButtonStyle?.fontFamily!)!, size: fontSize))
                     .foregroundColor(Color(hex: canSubmit ? (submitButtonStyle?.fontColor!)! : (submitButtonStyle?.hoverFontColor!)!))
                     .fontWeight((submitButtonStyle?.fontBold!)! ? .bold : .none)
-//                    .multilineTextAlignment(.center)
                     .padding(.horizontal,-20)
         })
         .disabled(!canSubmit)
@@ -54,7 +53,6 @@ struct SubmitButtonView: View {
             .stroke(Color(hex: (submitButtonStyle?.borderColor!)!), lineWidth: 1)
                 )
         .background(RoundedRectangle(cornerRadius: 25).fill(Color(hex: canSubmit ? (submitButtonStyle?.backgroundColor!)!: (submitButtonStyle?.hoverBackground!)!)))
-//          }
     }
 }
 
