@@ -19,8 +19,8 @@ struct SubmitButtonView: View {
         let surveyModel = sdkState.surveyResponseWrapper.surveyResponse.survey
         let questionResponses = sdkState.questionsResponses
 
-        HStack()
-        {
+//        HStack()
+//        {
         Button(action: {
             self.submitAnswers(surveyModel: surveyModel!, questionResponses: questionResponses, completionHandler: { isSurveySaved in
                 if(isSurveySaved)
@@ -52,7 +52,7 @@ struct SubmitButtonView: View {
             .stroke(Color(hex: (submitButtonStyle?.borderColor!)!), lineWidth: 1)
                 )
         .background(RoundedRectangle(cornerRadius: 25).fill(Color(hex: canSubmit ? (submitButtonStyle?.backgroundColor!)!: (submitButtonStyle?.hoverBackground!)!)))
-          }
+//          }
     }
 }
 
