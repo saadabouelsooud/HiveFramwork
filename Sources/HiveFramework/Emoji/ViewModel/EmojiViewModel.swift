@@ -13,9 +13,9 @@ class EmojiViewModel: ViewModel {
     init(selectedIndex: Int, title: String, titleStyle: QuestionTitleStyleModel) {
         let emojiRatesList = [
             EmojiRateModel(imageName: "angry", rateString: "angry",isSelected: false, numberResponse: 1),
-            EmojiRateModel(imageName: "good", rateString: "good",isSelected: false, numberResponse: 2),
-            EmojiRateModel(imageName: "happy", rateString: "happy",isSelected: false, numberResponse: 3),
-            EmojiRateModel(imageName: "smile", rateString: "smile",isSelected: false, numberResponse: 4),
+            EmojiRateModel(imageName: "smile", rateString: "smile",isSelected: false, numberResponse: 2),
+            EmojiRateModel(imageName: "good", rateString: "good",isSelected: false, numberResponse: 3),
+            EmojiRateModel(imageName: "happy", rateString: "happy",isSelected: false, numberResponse: 4),
             EmojiRateModel(imageName: "love", rateString: "love",isSelected: false, numberResponse: 5)
         ]
         let selectedNumberResponse = -1
