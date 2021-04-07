@@ -38,7 +38,7 @@ public struct CardView: View {
         }, label : {
           Image("close" , bundle: Bundle.module)/// module will be auto generated in runtime
         })
-        .frame(alignment: .leading)
+        .frame(width:30,height:15,alignment: .leading)
 
                 
         SurveyTitleView(sdkState: viewModel.sdkState)
@@ -55,13 +55,14 @@ public struct CardView: View {
         .cornerRadius(20)
 
         
-        VStack
+        VStack(alignment: .center)
         {
             SurveyNavigationView(sdkState: viewModel.sdkState, isPopup: viewModel.sdkState.isPopup)
             
             SubmitButtonView(sdkState: viewModel.sdkState, viewModel: viewModel)
+            .frame(alignment: .center)
+
         }
-        .frame(alignment: .center)
 
         
         Spacer().frame(height: 10)

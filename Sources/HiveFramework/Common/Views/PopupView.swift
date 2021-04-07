@@ -38,14 +38,14 @@ struct PopupView: View {
                 }, label : {
                   Image("close" , bundle: Bundle.module)/// module will be auto generated in runtime
                 })
-                .frame(alignment: .leading)
+                .frame(width:30,height:15,alignment: .leading)
 
                 
                   PopupSurveyTitleView(sdkState: HiveFramework.shared!)
                  .padding()
 
                     
-                 VStack
+                VStack(alignment: .center)
                    {
                     
                      QuestionsPagerView(isPopup: viewModel.sdkState.isPopup, sdkState: HiveFramework.shared!, pageCount: questions.count, content:
