@@ -48,7 +48,7 @@ struct SubmitButtonView: View {
             }
         })
         .disabled(!canSubmit)
-        .frame(width: 150, height: 50,alignment: .center)
+        .frame(width: 150, height: 50)
         .overlay(
               RoundedRectangle(cornerRadius: 25)
             .stroke(Color(hex: (submitButtonStyle?.borderColor!)!), lineWidth: 1)
