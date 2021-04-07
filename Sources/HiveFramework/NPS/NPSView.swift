@@ -74,6 +74,7 @@ struct NPSView: View {
 // MARK: - Private extension
 private extension NPSView {
     func select(index: Int) {
+        HiveFramework.shared!.questionSelected = true
         viewModel.trigger(.selectNPSAnswer(index: index))
     }
 }

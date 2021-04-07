@@ -60,6 +60,7 @@ struct EmojiView: View {
 // MARK: - Private extension
 private extension EmojiView {
     func select(index: Int) {
+        HiveFramework.shared!.questionSelected = true
         viewModel.trigger(.selectAnswer(index: index))
     }
 }

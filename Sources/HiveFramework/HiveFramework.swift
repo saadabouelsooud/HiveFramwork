@@ -13,6 +13,8 @@ public class HiveFramework:  ObservableObject {
     public var isGetTokenSuccess : Bool = false
     @Published public var isGetSurveySuccess : Bool = false
     @Published public var isSurveysaved : Bool = false
+    @Published public var questionSelected : Bool = false
+
 
     public var isPopup : Bool = false
 
@@ -132,9 +134,10 @@ extension HiveFramework
     {
         let questionRequired = surveyResponseWrapper.surveyResponse.survey?.questions![Int(currentQuestionIndex)].isRequired
         
-        if(currentQuestionIndex > 0 && !questionRequired!)
+        if(currentQuestionIndex > 0 && (!questionRequired! && questionSelected))
         {
             currentQuestionIndex -= 1
+            questionSelected = false
             updateQuestionsProgress()
         }
     }
@@ -144,9 +147,10 @@ extension HiveFramework
         let questionRequired = surveyResponseWrapper.surveyResponse.survey?.questions![Int(currentQuestionIndex)].isRequired
         let questionsCount = (surveyResponseWrapper.surveyResponse.survey?.questions!.count)!
         let currentIndex = Int(currentQuestionIndex)
-        if( currentIndex < questionsCount-1 && !questionRequired!)
+        if( currentIndex < questionsCount-1 && (!questionRequired! && questionSelected))
         {
             currentQuestionIndex += 1
+            questionSelected = false
             updateQuestionsProgress()
         }
     }
