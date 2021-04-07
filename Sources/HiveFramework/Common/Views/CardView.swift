@@ -20,6 +20,8 @@ public struct CardView: View {
     @ObservedObject
     var viewModel : AnyViewModel<DisplayModeViewState,DisplayModeViewInput>
     
+    @State var closeSurvey : Bool = false
+    
     init(sdkState: HiveFramework) {
         self.viewModel = AnyViewModel(DisplayModeViewModel(sdkState: sdkState))
     }
@@ -27,7 +29,7 @@ public struct CardView: View {
     
   public var body: some View {
     let questions = (viewModel.sdkState.surveyResponseWrapper.surveyResponse.survey?.questions)!
-    if(!viewModel.state.sdkState.closeSurvey)
+    if(!closeSurvey)
      {
         VStack
       {
@@ -38,7 +40,7 @@ public struct CardView: View {
                 Spacer()
                 
         Button(action: {
-            viewModel.state.sdkState.closeSurvey = true
+            closeSurvey = true
         }, label : {
           Image("close" , bundle: Bundle.module)/// module will be auto generated in runtime
         })

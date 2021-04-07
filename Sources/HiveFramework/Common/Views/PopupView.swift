@@ -18,6 +18,9 @@ enum PopupViewInput {
 struct PopupView: View {
     @ObservedObject
     var viewModel : AnyViewModel<DisplayModeViewState,DisplayModeViewInput>
+    
+    @State var closeSurvey : Bool = false
+
 
     init(sdkState: HiveFramework) {
         self.viewModel = AnyViewModel(DisplayModeViewModel(sdkState: sdkState))
@@ -27,7 +30,7 @@ struct PopupView: View {
         let questions = (viewModel.sdkState.surveyResponseWrapper.surveyResponse.survey?.questions)!
         let surveyBackgroundColor = (viewModel.sdkState.surveyResponseWrapper.surveyResponse.survey?.surveyOptions?.theme?.surveyBackgroundColor)!
         
-        if(!viewModel.state.sdkState.closeSurvey)
+        if(!closeSurvey)
         {
          Popup(isPresented: true, alignment: .center, direction: .top) {
             VStack
@@ -38,7 +41,7 @@ struct PopupView: View {
                     Spacer()
                     
                 Button(action: {
-                    viewModel.state.sdkState.closeSurvey = true
+                    closeSurvey = true
                 }, label : {
                   Image("close" , bundle: Bundle.module)/// module will be auto generated in runtime
                 })
