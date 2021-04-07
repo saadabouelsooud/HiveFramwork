@@ -27,7 +27,7 @@ public struct CardView: View {
     
   public var body: some View {
     let questions = (viewModel.sdkState.surveyResponseWrapper.surveyResponse.survey?.questions)!
-    if(!viewModel.sdkState.closeSurvey)
+    if(!viewModel.state.sdkState.closeSurvey)
      {
       VStack{
         SurveyTitleView(sdkState: viewModel.sdkState)
