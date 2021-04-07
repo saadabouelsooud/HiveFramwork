@@ -16,7 +16,7 @@ public class HiveFramework:  ObservableObject {
     @Published public var questionSelected : Bool = false
 
 
-    @Published public var isPopup : Bool = false
+    public var isPopup : Bool = false
 
 
     static var shared: HiveFramework? // you should remove it after test cause it is ObservableObject
