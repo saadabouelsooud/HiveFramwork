@@ -32,16 +32,13 @@ public struct CardView: View {
         VStack
       {
         
-            VStack(alignment: .leading)
-            {
-        Button(action: {
-            viewModel.state.sdkState.closeSurvey = true
-        }, label : {
-          Image("close" , bundle: Bundle.module)/// module will be auto generated in runtime
-        })
-        .frame(width: 60, height: 60, alignment: .leading)
 
-            }
+//        Button(action: {
+//            viewModel.state.sdkState.closeSurvey = true
+//        }, label : {
+//          Image("close" , bundle: Bundle.module)/// module will be auto generated in runtime
+//        })
+
                 
         SurveyTitleView(sdkState: viewModel.sdkState)
         .padding()
