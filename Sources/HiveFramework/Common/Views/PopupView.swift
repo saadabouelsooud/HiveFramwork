@@ -30,7 +30,7 @@ struct PopupView: View {
         if(!viewModel.sdkState.closeSurvey)
         {
          Popup(isPresented: true, alignment: .center, direction: .top) {
-            VStack(alignment: .leading)
+            VStack
                 {
                 
                 Button(action: {
@@ -38,7 +38,7 @@ struct PopupView: View {
                 }, label : {
                   Image("close" , bundle: Bundle.module)/// module will be auto generated in runtime
                     .resizable()
-                    .frame(width: 30, height: 30, alignment: .leading)
+                    .frame(width: 60, height: 60, alignment: .leading)
                 })
                 
                   PopupSurveyTitleView(sdkState: HiveFramework.shared!)
