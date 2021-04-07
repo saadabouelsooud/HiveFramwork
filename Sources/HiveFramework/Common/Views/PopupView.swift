@@ -27,14 +27,14 @@ struct PopupView: View {
         let questions = (viewModel.sdkState.surveyResponseWrapper.surveyResponse.survey?.questions)!
         let surveyBackgroundColor = (viewModel.sdkState.surveyResponseWrapper.surveyResponse.survey?.surveyOptions?.theme?.surveyBackgroundColor)!
         
-        if(!viewModel.sdkState.closeSurvey)
+        if(!viewModel.state.sdkState.closeSurvey)
         {
          Popup(isPresented: true, alignment: .center, direction: .top) {
             VStack
                 {
                 
                 Button(action: {
-                    viewModel.sdkState.closeSurvey = true
+                    viewModel.state.sdkState.closeSurvey = true
                 }, label : {
                   Image("close" , bundle: Bundle.module)/// module will be auto generated in runtime
                     .resizable()
