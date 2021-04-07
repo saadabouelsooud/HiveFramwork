@@ -32,7 +32,8 @@ struct PopupView: View {
          Popup(isPresented: true, alignment: .center, direction: .top) {
             VStack
                 {
-                
+                VStack(alignment: .leading)
+                {
                 Button(action: {
                     viewModel.state.sdkState.closeSurvey = true
                 }, label : {
@@ -40,6 +41,7 @@ struct PopupView: View {
                     .resizable()
                     .frame(width: 60, height: 60, alignment: .leading)
                 })
+                }
                 
                   PopupSurveyTitleView(sdkState: HiveFramework.shared!)
                  .padding()

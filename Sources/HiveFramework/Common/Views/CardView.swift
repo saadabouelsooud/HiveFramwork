@@ -32,6 +32,8 @@ public struct CardView: View {
         VStack
       {
         
+            VStack(alignment: .leading)
+            {
         Button(action: {
             viewModel.state.sdkState.closeSurvey = true
         }, label : {
@@ -39,7 +41,8 @@ public struct CardView: View {
             .resizable()
             .frame(width: 60, height: 60, alignment: .leading)
         })
-        
+            }
+                
         SurveyTitleView(sdkState: viewModel.sdkState)
         .padding()
         .cornerRadius(25)
