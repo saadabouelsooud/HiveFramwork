@@ -29,7 +29,7 @@ public struct CardView: View {
     let questions = (viewModel.sdkState.surveyResponseWrapper.surveyResponse.survey?.questions)!
     if(!viewModel.state.sdkState.closeSurvey)
      {
-        VStack(alignment: .leading)
+        VStack
       {
         
 
@@ -38,7 +38,7 @@ public struct CardView: View {
         }, label : {
           Image("close" , bundle: Bundle.module)/// module will be auto generated in runtime
         })
-        .frame(width:30,height:15,alignment: .leading)
+        .frame(width:15,height:15,alignment: .trailing)
 
                 
         SurveyTitleView(sdkState: viewModel.sdkState)
