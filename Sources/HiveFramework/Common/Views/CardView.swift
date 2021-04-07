@@ -20,19 +20,15 @@ public struct CardView: View {
     @ObservedObject
     var viewModel : AnyViewModel<DisplayModeViewState,DisplayModeViewInput>
     
-    @ObservedObject
-    var sdkState: HiveFramework
-    
     init(sdkState: HiveFramework) {
         self.viewModel = AnyViewModel(DisplayModeViewModel(sdkState: sdkState))
-        self.sdkState = sdkState
     }
 
     
   public var body: some View {
     let questions = (viewModel.sdkState.surveyResponseWrapper.surveyResponse.survey?.questions)!
-    if(!viewModel.state.sdkState.closeSurvey)
-     {
+//    if(!sdkState.closeSurvey)
+//     {
       VStack{
         SurveyTitleView(sdkState: viewModel.sdkState)
         .padding()
@@ -61,7 +57,7 @@ public struct CardView: View {
        .cornerRadius(25)
        .environment(\.layoutDirection, LanguageManager.shared.isRightToLeft ? .rightToLeft : .leftToRight)
       .padding(20)
-      }
+//      }
 //    else
 //    {
 //      EmptyView()

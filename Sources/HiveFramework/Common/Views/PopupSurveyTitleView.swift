@@ -13,16 +13,8 @@ struct PopupSurveyTitleView: View {
     var body: some View {
         let surveyHasProgress = (HiveFramework.shared!.surveyResponseWrapper.surveyResponse.survey?.surveyOptions?.hasProgressBar)!
         
-        VStack(alignment: .leading)
+        VStack
         {
-//            Button(action: {
-//                HiveFramework.shared!.closeSurvey = true
-//            }, label : {
-//              Image("close" , bundle: Bundle.module) /// module will be auto generated in runtime
-//            })
-//            .frame(width: 30, height: 30, alignment: .leading)
-
-            
             HStack()
             {
                 SurveyTitleTextView(sdkState: HiveFramework.shared!)

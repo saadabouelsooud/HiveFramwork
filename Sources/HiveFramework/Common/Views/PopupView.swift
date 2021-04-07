@@ -18,21 +18,15 @@ enum PopupViewInput {
 struct PopupView: View {
     @ObservedObject
     var viewModel : AnyViewModel<DisplayModeViewState,DisplayModeViewInput>
-    
-    @ObservedObject
-    var sdkState: HiveFramework
 
     init(sdkState: HiveFramework) {
         self.viewModel = AnyViewModel(DisplayModeViewModel(sdkState: sdkState))
-        self.sdkState = sdkState
     }
     
     public var body: some View{
         let questions = (viewModel.sdkState.surveyResponseWrapper.surveyResponse.survey?.questions)!
         let surveyBackgroundColor = (viewModel.sdkState.surveyResponseWrapper.surveyResponse.survey?.surveyOptions?.theme?.surveyBackgroundColor)!
         
-        if(!sdkState.closeSurvey)
-         {
         Popup(isPresented: true, alignment: .center, direction: .top) {
             VStack
                 {
@@ -65,13 +59,8 @@ struct PopupView: View {
                 .background(Color(hex: surveyBackgroundColor).opacity(0.1))
         }
         .popupContent()
-         }
-//        else
-//        {
-//            EmptyView()
-//
-//        }
-    }
+        
+        }
     
     /// should refactor it & put it in new class
     /// it is in BaseView & Pop up view
