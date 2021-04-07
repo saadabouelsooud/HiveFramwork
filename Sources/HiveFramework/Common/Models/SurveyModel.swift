@@ -11,6 +11,7 @@ public struct SurveyModel : Codable {
     let surveyGuid : String?
     let surveyID : Int?
     let name : String?
+    let title : String?
     let surveyLanguage : Int?
     let surveyOptions : SurveyOptionsModel?
     let questions : [QuestionModel]?
@@ -22,6 +23,7 @@ public struct SurveyModel : Codable {
         case surveyGuid = "SurveyGuid"
         case surveyID = "SurveyID"
         case name = "Name"
+        case title = "Title"
         case surveyLanguage = "SurveyLanguage"
         case surveyOptions = "SurveyOptions"
         case questions = "Questions"

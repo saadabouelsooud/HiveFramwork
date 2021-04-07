@@ -18,7 +18,7 @@ public struct SurveyTitleTextView: View {
     
     public var body: some View {
         let styleModel: SurveyTitleStyleModel = (sdkState.surveyResponseWrapper.surveyResponse.survey?.surveyOptions?.theme?.surveyTitleStyle)!
-        let title = (sdkState.surveyResponseWrapper.surveyResponse.survey?.name)!
+        let title = (sdkState.surveyResponseWrapper.surveyResponse.survey?.title)!
         let fontSize = CGFloat(Float((styleModel.fontSize!.deletingSuffix("px")))!)
 
         Text(title)
