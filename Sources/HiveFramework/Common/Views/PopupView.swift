@@ -30,14 +30,15 @@ struct PopupView: View {
         if(!viewModel.state.sdkState.closeSurvey)
         {
          Popup(isPresented: true, alignment: .center, direction: .top) {
-            VStack
+            VStack(alignment: .leading)
                 {
 
-//                Button(action: {
-//                    viewModel.state.sdkState.closeSurvey = true
-//                }, label : {
-//                  Image("close" , bundle: Bundle.module)/// module will be auto generated in runtime
-//                })
+                Button(action: {
+                    viewModel.state.sdkState.closeSurvey = true
+                }, label : {
+                  Image("close" , bundle: Bundle.module)/// module will be auto generated in runtime
+                })
+                .frame(alignment: .leading)
 
                 
                   PopupSurveyTitleView(sdkState: HiveFramework.shared!)
@@ -58,10 +59,12 @@ struct PopupView: View {
                     SurveyNavigationView(sdkState: HiveFramework.shared!, isPopup: viewModel.sdkState.isPopup)
                    }
                  
-                Spacer().frame(height: 25)
+                Spacer().frame(height: 20)
 
                    
                 SubmitButtonView(sdkState: HiveFramework.shared!, viewModel: viewModel)
+                    .frame(alignment: .center)
+
                 
                 Spacer().frame(height: 10)
                 }

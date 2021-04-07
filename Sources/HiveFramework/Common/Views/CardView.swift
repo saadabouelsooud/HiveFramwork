@@ -29,15 +29,16 @@ public struct CardView: View {
     let questions = (viewModel.sdkState.surveyResponseWrapper.surveyResponse.survey?.questions)!
     if(!viewModel.state.sdkState.closeSurvey)
      {
-        VStack
+        VStack(alignment: .leading)
       {
         
 
-//        Button(action: {
-//            viewModel.state.sdkState.closeSurvey = true
-//        }, label : {
-//          Image("close" , bundle: Bundle.module)/// module will be auto generated in runtime
-//        })
+        Button(action: {
+            viewModel.state.sdkState.closeSurvey = true
+        }, label : {
+          Image("close" , bundle: Bundle.module)/// module will be auto generated in runtime
+        })
+        .frame(alignment: .leading)
 
                 
         SurveyTitleView(sdkState: viewModel.sdkState)
@@ -51,7 +52,7 @@ public struct CardView: View {
                     self.getQuestionsView(question: questions[index])
                 }
             })
-        .cornerRadius(25)
+        .cornerRadius(20)
 
         
         VStack
@@ -60,6 +61,8 @@ public struct CardView: View {
             
             SubmitButtonView(sdkState: viewModel.sdkState, viewModel: viewModel)
         }
+        .frame(alignment: .center)
+
         
         Spacer().frame(height: 10)
 
