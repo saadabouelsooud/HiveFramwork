@@ -31,6 +31,7 @@ public struct CardView: View {
 //     {
       VStack{
         SurveyTitleView(sdkState: viewModel.sdkState)
+        .padding()
         .cornerRadius(25)
 
        

@@ -87,7 +87,7 @@ public class HiveFramework:  ObservableObject {
         {   
             return AnyView(HiveCardView())
         }
-        else if(displayMode != DisplayMode.CardView.rawValue && self.isGetSurveySuccess)
+        else if(displayMode == DisplayMode.PopupView.rawValue && self.isGetSurveySuccess)
         {
             isPopup = true
             return AnyView(HivePopupView())

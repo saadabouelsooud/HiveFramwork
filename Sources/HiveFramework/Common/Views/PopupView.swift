@@ -31,6 +31,8 @@ struct PopupView: View {
             VStack
                 {
                   PopupSurveyTitleView(sdkState: HiveFramework.shared!)
+                 .padding()
+
                     
                  ZStack
                    {

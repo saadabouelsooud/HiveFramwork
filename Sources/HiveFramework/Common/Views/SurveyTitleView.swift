@@ -26,6 +26,7 @@ struct SurveyTitleView: View {
 
                 SurveyTitleTextView(sdkState: HiveFramework.shared!)
 
+
                 Spacer()
                 
                 Image(systemName: "person.fill")
