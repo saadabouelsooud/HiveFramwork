@@ -19,7 +19,8 @@ struct SubmitButtonView: View {
         let surveyModel = sdkState.surveyResponseWrapper.surveyResponse.survey
         let questionResponses = sdkState.questionsResponses
 
-        
+        HStack()
+        {
         Button(action: {
             self.submitAnswers(surveyModel: surveyModel!, questionResponses: questionResponses, completionHandler: { isSurveySaved in
                 if(isSurveySaved)
@@ -29,8 +30,6 @@ struct SubmitButtonView: View {
                 
             })
         }, label: {
-            HStack()
-            {
                 Image(canSubmit ? "submit-enabled" : "submit-disabled", bundle: Bundle.module)/// module will be auto generated in runtime
                 .resizable()
                 .frame(width: 50, height: 50,alignment: .leading)
@@ -45,7 +44,6 @@ struct SubmitButtonView: View {
                     .fontWeight((submitButtonStyle?.fontBold!)! ? .bold : .none)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal,-25)
-            }
         })
         .disabled(!canSubmit)
         .frame(width: 150, height: 50)
@@ -54,7 +52,7 @@ struct SubmitButtonView: View {
             .stroke(Color(hex: (submitButtonStyle?.borderColor!)!), lineWidth: 1)
                 )
         .background(RoundedRectangle(cornerRadius: 25).fill(Color(hex: canSubmit ? (submitButtonStyle?.backgroundColor!)!: (submitButtonStyle?.hoverBackground!)!)))
-        
+          }
     }
 }
 
