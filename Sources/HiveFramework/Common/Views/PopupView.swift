@@ -42,6 +42,8 @@ struct PopupView: View {
                     
                 Button(action: {
                     closeSurvey = true
+                    HiveFramework.shared!.closeSurvey = true
+
                 }, label : {
                   Image("close" , bundle: Bundle.module)/// module will be auto generated in runtime
                 })
