@@ -15,12 +15,6 @@ struct PopupSurveyTitleView: View {
         
         VStack(alignment: .leading)
         {
-            Button(action: {
-                sdkState.closeSurvey = true
-            }, label : {
-              Image("close" , bundle: Bundle.module) /// module will be auto generated in runtime
-            })
-            
             HStack()
             {
                 SurveyTitleTextView(sdkState: HiveFramework.shared!)
