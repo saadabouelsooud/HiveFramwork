@@ -45,6 +45,7 @@ public struct CardView: View {
           Image("close" , bundle: Bundle.module)/// module will be auto generated in runtime
         })
             }
+            .frame(height: 10)
                 
         SurveyTitleView(sdkState: viewModel.sdkState)
         .padding()

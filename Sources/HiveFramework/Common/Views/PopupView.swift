@@ -47,6 +47,8 @@ struct PopupView: View {
                 })
                     
                 }
+                .frame(height: 10)
+
                 
                   PopupSurveyTitleView(sdkState: HiveFramework.shared!)
                  .padding()
