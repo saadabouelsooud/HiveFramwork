@@ -16,6 +16,7 @@ struct SurveyTitleView: View {
 
         VStack(alignment: .leading){
             
+            Text("hiiiiiiiii")
             Button(action: {
                 HiveFramework.shared!.closeSurvey = true
             }, label : {
