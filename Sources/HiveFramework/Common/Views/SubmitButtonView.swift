@@ -43,6 +43,7 @@ struct SubmitButtonView: View {
                     .fontWeight((submitButtonStyle?.fontBold!)! ? .bold : .none)
                     .padding(.horizontal,-25)
             }
+            .padding()
         })
         .disabled(!canSubmit)
         .frame(width: 180, height: 50)
