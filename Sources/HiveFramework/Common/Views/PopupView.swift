@@ -36,7 +36,6 @@ struct PopupView: View {
                     
                  VStack
                    {
-                    SurveyNavigationView(sdkState: HiveFramework.shared!, isPopup: viewModel.sdkState.isPopup)
                     
                      QuestionsPagerView(isPopup: viewModel.sdkState.isPopup, sdkState: HiveFramework.shared!, pageCount: questions.count, content:
                          {
@@ -45,6 +44,8 @@ struct PopupView: View {
                               self.getQuestionsView(question: questions[index])
                             }
                          })
+                    
+                    SurveyNavigationView(sdkState: HiveFramework.shared!, isPopup: viewModel.sdkState.isPopup)
                    }
                  
                 Spacer().frame(height: 25)
