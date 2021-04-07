@@ -33,7 +33,7 @@ struct SubmitButtonView: View {
             {
                 Image(canSubmit ? "submit-enabled" : "submit-disabled", bundle: Bundle.module)/// module will be auto generated in runtime
                 .resizable()
-                .frame(width: 70, height: 70,alignment: .leading)
+                .frame(width: 60, height: 60,alignment: .leading)
                 .padding(.bottom, -25)
 
 
@@ -48,7 +48,7 @@ struct SubmitButtonView: View {
             }
         })
         .disabled(!canSubmit)
-        .frame(width: 180, height: 50,alignment: .center)
+        .frame(width: 150, height: 50,alignment: .center)
         .overlay(
               RoundedRectangle(cornerRadius: 25)
             .stroke(Color(hex: (submitButtonStyle?.borderColor!)!), lineWidth: 1)
