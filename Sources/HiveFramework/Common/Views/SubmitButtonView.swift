@@ -33,7 +33,7 @@ struct SubmitButtonView: View {
                 Image(canSubmit ? "submit-enabled" : "submit-disabled", bundle: Bundle.module)/// module will be auto generated in runtime
                 .resizable()
                 .frame(width: 50, height: 50,alignment: .leading)
-                .padding(.horizontal,-25)
+                .padding(.leading,-25)
                 .padding(.bottom, -25)
 
 
