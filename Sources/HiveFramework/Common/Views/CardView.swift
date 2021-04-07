@@ -33,13 +33,16 @@ public struct CardView: View {
       {
         
 
+            HStack
+            {
+                Spacer()
+                
         Button(action: {
             viewModel.state.sdkState.closeSurvey = true
         }, label : {
           Image("close" , bundle: Bundle.module)/// module will be auto generated in runtime
         })
-        .frame(width:15,height:15,alignment: .trailing)
-
+            }
                 
         SurveyTitleView(sdkState: viewModel.sdkState)
         .padding()
