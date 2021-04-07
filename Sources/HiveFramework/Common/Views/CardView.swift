@@ -35,7 +35,7 @@ public struct CardView: View {
         .cornerRadius(25)
 
        
-        QuestionsPagerView(isPopup: false, sdkState: viewModel.sdkState, pageCount: questions.count, content:
+        QuestionsPagerView(isPopup: viewModel.sdkState.isPopup, sdkState: viewModel.sdkState, pageCount: questions.count, content:
             {
                 ForEach(0..<questions.count){ index in
                     self.getQuestionsView(question: questions[index])
@@ -46,7 +46,7 @@ public struct CardView: View {
         
         VStack
         {
-            SurveyNavigationView(sdkState: viewModel.sdkState, isPopup: false)
+            SurveyNavigationView(sdkState: viewModel.sdkState, isPopup: viewModel.sdkState.isPopup)
             
             SubmitButtonView(sdkState: viewModel.sdkState, viewModel: viewModel)
         }
