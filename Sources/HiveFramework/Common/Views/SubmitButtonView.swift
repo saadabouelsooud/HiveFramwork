@@ -29,7 +29,7 @@ struct SubmitButtonView: View {
                 
             })
         }, label: {
-            HStack()
+            HStack(alignment: .center)
             {
                 Image(canSubmit ? "submit-enabled" : "submit-disabled", bundle: Bundle.module)/// module will be auto generated in runtime
                 .resizable()
