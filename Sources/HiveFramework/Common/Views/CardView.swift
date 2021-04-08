@@ -22,6 +22,8 @@ public struct CardView: View {
     
     @State var closeSurvey : Bool = false
     
+    let questionViewBuilder = QuestionViewBuilder()
+    
     init(sdkState: HiveFramework) {
         self.viewModel = AnyViewModel(DisplayModeViewModel(sdkState: sdkState))
     }
@@ -56,7 +58,7 @@ public struct CardView: View {
         QuestionsPagerView(isPopup: viewModel.sdkState.isPopup, sdkState: viewModel.sdkState, pageCount: questions.count, content:
             {
                 ForEach(0..<questions.count){ index in
-                    self.getQuestionsView(question: questions[index])
+                    self.questionViewBuilder.build(question: questions[index])
                 }
             })
         .cornerRadius(20)
@@ -79,28 +81,8 @@ public struct CardView: View {
        .environment(\.layoutDirection, LanguageManager.shared.isRightToLeft ? .rightToLeft : .leftToRight)
       .padding(20)
       }
-//    else
-//    {
-//      EmptyView()
-//    }
 }
-    /// should refactor it & put it in new class
-    /// it is in BaseView & Pop up view
-    func getQuestionsView(question: QuestionModel) -> AnyView
-    {
-        let titleStyle = (HiveFramework.shared!.surveyResponseWrapper.surveyResponse.survey?.surveyOptions?.theme?.questionTitleStyle)!
-          switch question.questionType
-            {
-             case QuestionType.Emoji.rawValue:
-                return AnyView (EmojiView(selectedIndex: -1, title: question.title!, titleStyle: titleStyle)
-                    .cornerRadius(25))
-             case QuestionType.NPS.rawValue:
-                return AnyView (NPSView(selectedIndex: -1, title: question.title!, titleStyle: titleStyle)
-                    .cornerRadius(25))
-             default:
-                return AnyView(EmptyView())
-            }
-    }
+
 }
 
 

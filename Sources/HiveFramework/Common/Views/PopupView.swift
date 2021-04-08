@@ -21,6 +21,8 @@ struct PopupView: View {
     
     @State var closeSurvey : Bool = false
 
+    let questionViewBuilder = QuestionViewBuilder()
+
 
     init(sdkState: HiveFramework) {
         self.viewModel = AnyViewModel(DisplayModeViewModel(sdkState: sdkState))
@@ -63,7 +65,7 @@ struct PopupView: View {
                          {
                           ForEach(0..<questions.count)
                             { index in
-                              self.getQuestionsView(question: questions[index])
+                             self.questionViewBuilder.build(question: questions[index])
                             }
                          })
                     
@@ -88,24 +90,7 @@ struct PopupView: View {
        }
         
     }
-    
-    /// should refactor it & put it in new class
-    /// it is in BaseView & Pop up view
-    func getQuestionsView(question: QuestionModel) -> AnyView
-    {
-        let titleStyle = (HiveFramework.shared!.surveyResponseWrapper.surveyResponse.survey?.surveyOptions?.theme?.questionTitleStyle)!
-          switch question.questionType
-            {
-             case QuestionType.Emoji.rawValue:
-                return AnyView (EmojiView(selectedIndex: -1, title: question.title!, titleStyle: titleStyle))
-             case QuestionType.NPS.rawValue:
-                return AnyView (NPSView(selectedIndex: -1, title: question.title!, titleStyle: titleStyle))
-             default:
-                return AnyView(EmptyView())
-            }
-    }
-
-    
+      
  }
 
 struct PopupView_Previews: PreviewProvider {
