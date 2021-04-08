@@ -65,7 +65,8 @@ public class HiveFramework:  ObservableObject {
                 self.isGetSurveySuccess = true
 
                 let displayMode = self.surveyResponseWrapper.surveyResponse.survey?.surveyOptions?.displayMode
-                if(displayMode == DisplayMode.PopupView.rawValue && self.isGetSurveySuccess)
+                /// should be refactored after know display modes values
+                if(displayMode != DisplayMode.CardView.rawValue && self.isGetSurveySuccess)
                 {
                   self.isPopup = true
                 }
@@ -95,14 +96,15 @@ public class HiveFramework:  ObservableObject {
         {
             return AnyView(HiveCardView())
         }
-        else if(displayMode == DisplayMode.PopupView.rawValue && self.isGetSurveySuccess)
+        else
+//        if(displayMode == DisplayMode.PopupView.rawValue && self.isGetSurveySuccess)
         {
             return AnyView(HivePopupView())
         }
-        else
-        {
-            return AnyView(EmptyView())
-        }
+//        else
+//        {
+//            return AnyView(EmptyView())
+//        }
     }
 }
 

@@ -9,5 +9,5 @@ import Foundation
 public enum DisplayMode : Int
 {
     case CardView = 4
-    case PopupView = 6
+//    case PopupView = 6
 }
